@@ -27,10 +27,10 @@ const char* classification(float cgpa) {
     else return "Fail";
 }
  void printLine() {
-     printf("==========================\n");
+     printf("=============================================================\n");
  }
  void printThinLine() {
-     printf("--------------------------\n");
+     printf("--------------------------------------------------------------\n");
  }
  
 int main() {
@@ -54,8 +54,9 @@ int main() {
         scanf("%f", &sem1_scores[i]);
 
    if (sem1_scores[i] < 0 ||sem1_scores[i] > 100) {
-        printf("Invalid score entered\n");
-            return 1;
+        printf("Invalid score! Please enter a score between 0 and 100: \n");
+       i--;
+            continue ;
 }
 
     sem1_gp[i] = gradePoint(sem1_scores[i]);
@@ -79,8 +80,9 @@ int main() {
         scanf("%f", &sem2_scores[i]);
 
     if (sem2_scores[i] < 0 || sem2_scores[i] > 100) {
-            printf("Invalid score entered\n");
-            return 1;
+            printf("Invalid score! Please enter a score between 0 and 100: \n");
+        i--;
+             continue ;
     }
 
         sem2_gp[i] = gradePoint(sem2_scores[i]);
@@ -97,7 +99,7 @@ int main() {
    printf("\n\n");
    printLine();
    printf("KYAMBOGO UNIVERSITY ACADEMIC REPORT - YEAR 1\n");
-   printf("Bachelors of Engineering in Biomedical and Mechatronics \n");
+   printf("Bachelors of Engineering in Biomedical and Mechatronics\n");
     
    printLine();
    printf("\n  SEMESTER ONE RESULTS\n");
@@ -116,9 +118,9 @@ int main() {
    printf("  Total Credit Units : %d\n", sem1_totalCreditUnits);
    printf("  Total Weighted Contribution : %.2f\n", sem1_totalWeightedContribution);
 
-   printf("\nSEMESTER TWO RESULTS\n");
+   printf("\n SEMESTER TWO RESULTS\n");
    printThinLine();
-   printf("  %-12s  %-7s  %-6s  %-11s  %-11s  %-14s\n","courseCode", "score", "grade", "gradePoint","creditUnit","weightedContribution");
+   printf("  %-12s  %-7s  %-6s  %-11s  %-11s  %-14s\n","courseCode", "score", "grade", "gradePoint","creditUnits","weightedContribution");
     
    printThinLine();
     for (int i = 0; i < 8; i++) {
